@@ -2,5 +2,5 @@ import { Request } from "express";
 import { JwtPayload } from "./jwt.types";
 
 export interface AuthRequest extends Request {
-  user: JwtPayload;
+  user: JwtPayload; // not optional — always exists on protected routes
 }

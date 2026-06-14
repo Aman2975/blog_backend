@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { JwtPayload } from "jsonwebtoken";
+import { JwtPayload } from "../types/jwt.types";
 
 interface AccessTokenPayload {
   userId: string;
