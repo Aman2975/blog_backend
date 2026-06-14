@@ -18,7 +18,7 @@ export const getFeedPosts = async (
     await feedRepository.countFeedPosts();
 
   return {
-    posts: posts.map(post => ({
+    posts: posts.map((post: any) => ({
       id: post.id,
       title: post.title,
       description: post.description,
@@ -66,7 +66,7 @@ export const searchPosts = async (
     );
 
   return {
-    posts: posts.map(post => ({
+    posts: posts.map((post: any) => ({
       id: post.id,
       title: post.title,
       description: post.description,

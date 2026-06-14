@@ -30,7 +30,7 @@ export const getMyPosts = async (
       userId
     );
 
-  return posts.map(post => ({
+  return posts.map((post: any)=> ({
     id: post.id,
     title: post.title,
     description: post.description,
