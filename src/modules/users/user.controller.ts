@@ -9,11 +9,26 @@ export const getProfile = async (
   
   const authReq = req as AuthRequest;
 
-  res.status(200).json({
-    success: true,
-    userId: authReq.user.userId,   
-    email: authReq.user.email,     
-  });
+  try {
+    const profile = await userService.getProfile(
+      authReq.user.userId
+    );
+
+    res.status(200).json({
+      success: true,
+      data: profile,
+    });
+  } catch (error) {
+    const message =
+      error instanceof Error
+        ? error.message
+        : "Something went wrong";
+
+    res.status(400).json({
+      success: false,
+      message,
+    });
+  }
 };
 
 export const updateProfile = async (

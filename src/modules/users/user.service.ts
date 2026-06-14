@@ -3,6 +3,26 @@ import { UpdateProfileDto } from "./user.types";
 import { ChangePasswordDto } from "./user.types";
 import bcrypt from "bcrypt";
 
+export const getProfile = async (
+  userId: string
+) => {
+  const user = await userRepository.findById(
+    userId
+  );
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    bio: user.bio,
+    profileImage: user.profile_image,
+  };
+};
+
 export const updateProfile = async (
   userId: string,
   payload: UpdateProfileDto
