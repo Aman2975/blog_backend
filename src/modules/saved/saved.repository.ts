@@ -77,10 +77,13 @@ export const unsavePost = async (
   userId: string,
   postId: string
 ) => {
-  return prisma.saved_posts.deleteMany({
+    console.log("Attempting to unsave post with ID:", postId, "for user ID:", userId); // Debugging log
+    const deleted = await prisma.saved_posts.deleteMany({
     where: {
       user_id: userId,
       post_id: postId,
     },
   });
+  console.log("Deleted saved post:", deleted);
+  return deleted;
 };  

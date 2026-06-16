@@ -44,6 +44,7 @@ export const savePost = async (req: any, res: Response): Promise<void> => {
 export const unsavePost = async (req: any, res: Response): Promise<void> => {
     try {
         const { postId } = req.params;
+        // console.log("Post ID to unsave:", postId); // Debugging log
         await savedService.unsavePost(req.user.userId, postId);       
         res.status(200).json({
             success: true,

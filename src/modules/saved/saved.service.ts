@@ -4,7 +4,7 @@ export const savedService = {
     getSavedPosts: async (userId: string) => {
         const savedPosts = await savedRepository.getSavedPosts(userId);
         return savedPosts.map((post: any) => ({
-            id: post.id,
+            id: post.post_id,
             title: post.posts.title,
             description: post.posts.description,
             imageUrl: post.posts.image_url,
