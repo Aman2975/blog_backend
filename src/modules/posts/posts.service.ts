@@ -12,6 +12,9 @@ interface CreatePostServiceDto {
 export const createPost = async (
   payload: CreatePostServiceDto
 ) => {
+ 
+  console.log("Creating post with payload:", payload);
+
 
   const post =
     await postRepository.createPost(
@@ -49,6 +52,8 @@ export const getPostById = async (
     await postRepository.findPostById(
       postId
     );
+
+    // console.log("Fetched post:", post);
 
   if (!post) {
     throw new Error(

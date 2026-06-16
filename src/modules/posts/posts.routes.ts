@@ -23,10 +23,10 @@ router.get(
   getMyPosts
 );
 
-// router.get(
-//   "/:postId",
-//   getPostById
-// );
+router.get(
+  "/:postId",
+  getPostById
+);
 
 router.patch(
   "/:postId",

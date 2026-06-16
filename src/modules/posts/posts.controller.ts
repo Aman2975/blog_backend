@@ -101,6 +101,8 @@ export const getPostById = async (
         req.user?.userId
       );
 
+      // console.log("Fetched post:", post);
+
     res.status(200).json({
       success: true,
       data: post,
