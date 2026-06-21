@@ -53,7 +53,9 @@ export const getPostById = async (
       postId
     );
 
-    // console.log("Fetched post:", post);
+    console.log("Fetched post:", post);
+    console.log(postId)
+    console.log(currentUserId)
 
   if (!post) {
     throw new Error(

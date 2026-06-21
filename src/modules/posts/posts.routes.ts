@@ -25,6 +25,7 @@ router.get(
 
 router.get(
   "/:postId",
+  authenticate,
   getPostById
 );
 
